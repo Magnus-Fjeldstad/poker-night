@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #f8f4eb;
+  background:
+    radial-gradient(circle at top left, rgba(200, 154, 75, 0.08), transparent 22rem),
+    radial-gradient(circle at bottom right, rgba(71, 130, 104, 0.14), transparent 20rem),
+    linear-gradient(135deg, #081713 0%, #0f241e 52%, #17362c 100%);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(239, 230, 210, 0.04) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+  letter-spacing: -0.02em;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 shadow-felt backdrop-blur-xl sm:p-6;
+  }
+
+  .field {
+    @apply w-full rounded-[1.15rem] border border-white/10 bg-black/15 px-4 py-3 text-sm text-ivory-50 outline-none transition placeholder:text-ivory-100/30 focus:border-brass-300/70 focus:bg-black/25 focus:ring-2 focus:ring-brass-500/20;
+  }
+
+  .label {
+    @apply mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-ivory-100/70;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-[1.15rem] bg-brass-500 px-4 py-3 text-sm font-semibold text-felt-950 transition hover:bg-brass-300 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-[1.15rem] border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-ivory-50 transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .button-danger {
+    @apply inline-flex items-center justify-center rounded-[1.15rem] border border-rose-300/25 bg-rose-500/10 px-4 py-3 text-sm font-semibold text-rose-100 transition hover:bg-rose-500/20;
+  }
+
+  .stat-card {
+    @apply rounded-[1.5rem] border border-white/10 bg-black/20 p-4;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: rise-in 0.45s ease-out both;
+}

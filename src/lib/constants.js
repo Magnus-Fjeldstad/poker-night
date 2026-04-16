@@ -1,0 +1,7 @@
+export const CHIP_DENOMINATIONS = [5, 10, 25, 50, 100, 500];
+
+export const BASE_STACK_UNITS = 3000;
+
+export const BLIND_LADDER = [30, 60, 100, 150, 200, 300, 400, 600, 800, 1000, 1500];
+
+export const OPENING_BIG_BLIND = BLIND_LADDER[0];
